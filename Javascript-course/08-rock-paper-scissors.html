@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <p>Rock Paper Scissors</p>
+    <button onclick="
+      computerMove = computeMove();
+      result = tester('rock',computerMove);
+      alert(`You picked paper. Computer picked ${computerMove}. You ${result}.
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+    ">
+      Rock
+    </button>
+    <button onclick="
+      computerMove = computeMove();
+      result = tester('paper',computerMove);
+      alert(`You picked paper. Computer picked ${computerMove}. You ${result}.
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+    ">
+      Paper
+    </button>
+    <button onclick="
+      computerMove = computeMove();
+      result = tester('paper',computerMove);
+      alert(`You picked paper. Computer picked ${computerMove}. You ${result}.
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+    ">
+      Scissors
+    </button>
+    <button onclick="
+      score.wins = 0;
+      score.losses = 0;
+      score.ties = 0;
+      alert(`Score was reset!
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`)
+      localStorage.removeItem('score');
+    ">
+      Reset Score
+    </button>
+    <script>
+
+      let score = JSON.parse(localStorage.getItem('score')) || {
+          wins: 0,
+          losses: 0,
+          ties: 0
+        };
+      //creates a default score so code wont crash when score is reset
+      //checks if score is null!!
+
+      function computeMove(){
+        let computerMove = '';
+        const randomNumber = Math.random();
+        if(randomNumber>=0 && randomNumber<(1/3)){
+          computerMove = 'rock';
+        } else if(randomNumber >= (1/3)&& randomNumber<(2/3)){
+          computerMove = 'paper';
+        } else if (randomNumber>= (2/3)&& randomNumber<1){
+          computerMove = 'scissors';
+        }
+        return computerMove;
+      }
+      function tester(yourMove,computerMove){
+        let result = '';
+        if((yourMove==='rock'&&computerMove==='rock') ||(yourMove==='paper'&&computerMove==='paper')||(yourMove==='scissors'&&computerMove==='scissors')){
+          score.ties ++;
+          result = 'Tie';
+        }
+        else if ((yourMove==='rock'&&computerMove==='paper')||(yourMove==='paper'&&computerMove==='scissors')||(yourMove==='scissors'&&computerMove==='rock')){
+          score.losses ++;
+          result = 'Lose';
+        }
+        else if ((yourMove==='rock'&&computerMove==='scissors')||(yourMove==='scissors'&&computerMove==='paper')||(yourMove==='paper'&&computerMove==='rock')){
+          score.wins ++;
+          result = 'Win';
+        }
+        localStorage.setItem('score',JSON.stringify(score));
+        return result;
+      }
+    </script>
+  </body>
+</html>

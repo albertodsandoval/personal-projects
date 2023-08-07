@@ -5,6 +5,7 @@
   </head>
   <body>
     <script>
+      /*
       const product = {
         name: 'Socks',
         price: 1090
@@ -14,6 +15,78 @@
       console.log(product.price);
       product.name = 'Cotton Socks';
       console.log(product.name);
+
+      //creating a new property
+      product.newProperty = true;
+      console.log(product);
+
+      //deleting properties
+      delete product.newProperty;
+      console.log(product);
+      
+
+      const product2 = {
+        name: 'shirt',
+        ['delivery-time']: '1 day',
+        //nested object
+        rating: {
+          stars: 4.5,
+          count: 87
+        },
+        //can also store functions inside objects since they are values. these are called methods
+        fun: function function1(){
+          console.log('function inside object');
+        }
+      };
+      console.log(product2);
+      console.log(product2['name']);//bracket notation, works the same as dot notation product2.name. use bracket notation when property names contain special terms or special characters
+      console.log(product2.rating.count)
+      product2.fun();
+
+      //json, a more universal synatax of javascript objects. does not support functions.
+      console.log(JSON.stringify(product2));//transforms into string
+      //converting back into JS object from JSON
+      console.log(JSON.parse(JSON.stringify(product2)));
+
+      //variables are temporary
+      */
+     console.log('hello'.length);//not just objects have methods and parameters
+     console.log('hello'.toUpperCase());
+
+     //objects are references
+     const object1 = {
+      message: 'hello'
+     };
+     const object2 = object1;//doesnt make a copy, just copies the point to the reference
+
+     object1.message = 'good job';//although we used const, we can still change the value because we are not changing the pointer
+     console.log(object1);
+     console.log(object2);//will also change because object1 and 2 have the same reference
+
+     const object3 = {
+      message : 'good job'
+     };
+
+     console.log(object3===object1);//although they have the same contents, they have different references so comparing them resuts in false
+     console.log(object1===object2);//will always be true because they have the same unchangable reference due to const
+
+     const object4 = {
+      message : 'good job',
+      price: 799
+     };
+     //const message = object4.message;//saves the property in a variable
+     const {message, price} = object4;//does the same thing as the line above, shortcut for when naming the variable the same as the existing property
+     console.log(`${price}, ${message}`);
+
+     const object5 = {
+        //message: message
+        message,//does the same thing as line above, creates a property for a variable with the same name
+        method: function function1(){
+          console.log('method');
+        }
+     };
+     console.log(object5);
+     object5.method();
     </script>
   </body>
 </html>
