@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Booleans</title>
+  </head>
+  <body>
+    <script>
+      /*
+      true
+      false
+
+      console.log(3>5);
+      
+      //== converts both values to the same
+      console.log(5 == '5.00');//true
+      //=== doesnt convert
+      console.log(5 === '5.00');//false
+
+      //if statements!!!
+      if(true){
+        console.log('hello');
+      } else {
+        console.log('else');
+      }
+
+      //checking if someone is old enough to drive
+      //creating a variable for age
+      const age = 15;
+      if(age>=16){
+        console.log('can drive');
+      } else if(age >= 14){
+        console.log('Almost there!');
+      } else{
+        console.log('cannot drive');
+      }
+      
+      
+      //logical operators
+      
+      //and
+      console.log(true && true);
+      //or
+      console.log(true || true);
+      */
+      
+      //truthy and falsy values
+
+      //5 will behave just like true
+      if(5){
+        console.log('truthy');
+      }
+      //falsy values are false, 0, '', NaN(not a number or invalid math), undefined, and null
+      //any value that isnt falsy is truthy 
+
+      //shortcuts
+
+      //ternary operator
+      true ? 'truthy' : 'falsy';
+      //if true, then truthy, if false, then falsy
+
+      //guard operator
+      false && console.log('hello');
+      //will not run console.log if first statement is false
+
+      //default operator
+      true || console.log('hello');
+      //will only run second statement if first statement is false  
+    </script>
+  </body>
+</html>

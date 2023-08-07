@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Functions</title>
+  </head>
+  <body>
+    <script>
+      /*
+      function function1(){
+        console.log('hello');
+        console.log(2 + 2);
+      }
+
+      function1();
+      */
+      //parameters
+      function calculateTax(amount, taxPercent = 0.1){
+        const tax = amount * taxPercent;
+        return tax;
+      }
+      //use '=' to set a default value for a parameter
+      const amount = 2000;
+      console.log(calculateTax(amount,.07));
+    </script>
+  </body>
+</html>

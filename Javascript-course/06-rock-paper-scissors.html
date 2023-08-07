@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <p>Rock Paper Scissors</p>
+    <button onclick="
+      computerMove = computeMove();
+      result = tester('rock',computerMove);
+      alert(`You picked rock. Computer picked ${computerMove}. You ${result}.`);
+    ">
+      Rock
+    </button>
+    <button onclick="
+      computerMove = computeMove();
+      result = tester('paper',computerMove);
+      alert(`You picked paper. Computer picked ${computerMove}. You ${result}.`);
+    ">
+      Paper
+    </button>
+    <button onclick="
+      computerMove = computeMove();
+      result = tester('paper',computerMove);
+      alert(`You picked paper. Computer picked ${computerMove}. You ${result}.`);
+    ">
+      Scissors
+    </button>
+    <script>
+      function computeMove(){
+        let computerMove = '';
+        const randomNumber = Math.random();
+        if(randomNumber>=0 && randomNumber<(1/3)){
+          computerMove = 'rock';
+        } else if(randomNumber >= (1/3)&& randomNumber<(2/3)){
+          computerMove = 'paper';
+        } else if (randomNumber>= (2/3)&& randomNumber<1){
+          computerMove = 'scissors';
+        }
+        return computerMove;
+      }
+      function tester(yourMove,computerMove){
+        let result = '';
+        if((yourMove==='rock'&&computerMove==='rock') ||(yourMove==='paper'&&computerMove==='paper')||(yourMove==='scissors'&&computerMove==='scissors'))
+          result = 'Tie';
+        else if ((yourMove==='rock'&&computerMove==='paper')||(yourMove==='paper'&&computerMove==='scissors')||(yourMove==='scissors'&&computerMove==='rock'))
+          result = 'Lose';
+        else if ((yourMove==='rock'&&computerMove==='scissors')||(yourMove==='scissors'&&computerMove==='paper')||(yourMove==='paper'&&computerMove==='rock'))
+          result = 'Win';
+        return result;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cart Quantity</title>
+    <style>
+
+    </style>
+  </head>
+
+  <body>
+    <p>
+      Cart Quantity
+    </p>
+    <button onclick="
+        console.log('Cart quantity: '+amount);
+      ">
+      Show Quantity
+    </button>
+    <button onclick="
+        temp = amount + 1;
+        if(temp>10){
+          console.log('The cart is full');
+        } else {
+        amount++;
+        console.log('Cart quantity: '+amount);
+        }
+        
+      ">
+      Add to Cart
+    </button>
+    <button onclick="
+    temp = amount -1;
+      if(temp<0){
+        console.log('Not enough items in cart');
+      } else {
+      amount --;
+      console.log('Cart quantity: '+amount);
+      }
+    ">
+      Remove from Cart
+    </button>
+    <button onclick="
+        temp = amount + 2;
+        if(temp>10){
+          console.log('The cart is full');
+        } else {
+        amount += 2;
+        console.log('Cart quantity: '+amount);
+        }
+      ">
+      +2
+    </button>
+    <button onclick="
+        temp = amount + 3;
+        if(temp>10){
+          console.log('The cart is full');
+        } else {
+        amount += 3;
+        console.log('Cart quantity: '+amount);
+        }
+    ">
+      +3
+    </button>
+    <button onclick="
+        temp = amount + 4;
+        if(temp>10){
+          console.log('The cart is full');
+        } else {
+        amount += 4;
+        console.log('Cart quantity: '+amount);
+        }
+    ">
+      +4
+    </button>
+    <button onclick="
+          temp = amount + 5;
+          if(temp>10){
+            console.log('The cart is full');
+          } else {
+          amount += 5;
+          console.log('Cart quantity: '+amount);
+          }
+    ">
+      +5
+    </button>
+    <button onclick="
+    temp = amount - 2;
+      if(temp<0){
+        console.log('Not enough items in cart');
+      } else {
+      amount -= 2;
+      console.log('Cart quantity: '+amount);
+      }
+    ">
+      -2
+    </button>
+    <button onclick="
+    temp = amount - 3;
+      if(temp<0){
+        console.log('Not enough items in cart');
+      } else {
+      amount -= 3;
+      console.log('Cart quantity: '+amount);
+      }
+    ">
+      -3
+    </button>
+    <button onclick="
+      amount = 0;
+      console.log('Cart was reset.\nCart quantity: '+ amount);
+    ">
+      Reset Cart
+    </button>
+    <script>
+      let amount = 0;
+      let temp;
+    </script>
+  </body>
+</html>
