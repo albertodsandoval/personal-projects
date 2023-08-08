@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM</title>
+  </head>
+  <body>
+    <button class="js-first">First Button</button>
+    <button class="js-second">Second Button</button>
+
+    <script>
+      //allows you to choose exactly which element you want to access from the HTML
+      console.log(document.querySelector('button').innerHTML);
+      document.querySelector('.js-first')
+        .innerHTML = 'Changed';
+
+      //can save html elements in variables in js
+      const buttonElement = document.querySelector('js-first');
+
+      /*
+      console.log(document.title);
+      document.title = 'changed';
+
+      console.log(document.body);//introduces html elements inside the javascript!!
+
+      //whenever an html element is in javascript, it is considered an element
+      console.log(typeof (document.body));
+
+      console.log(document.body.innerHTML);
+      //changes the html of the body with javascript
+      document.body.innerHTML = '<button>Good Job!</button>';
+
+      console.log(document.body.innerHTML);
+      
+      
+      document.body.innerHTML = 'hello';//changes webpage body
+      document.title = 'Good Job!';//changes webpage title
+      */
+    </script>
+  </body>
+</html>
