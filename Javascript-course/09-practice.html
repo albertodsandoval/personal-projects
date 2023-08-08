@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <!--
+    <button>9a</button>
+    <button class="js-button-9b" onclick="changeButton9b();">9b</button>
+    -->
+    <button onclick="updateMove('heads');">heads</button>
+    <button onclick="updateMove('tails');">tails</button>
+    <p class="js-move"></p>
+    <input class="js-name-input" placeholder="Enter name" onkeydown="handleNameKeyDown();">
+    <button onclick="updateName()">Submit</button>
+    <p class="js-name-update"></p>
+    <script>
+      console.log(document.querySelector('button'));
+      function changeButton9b(){
+        document.querySelector('.js-button-9b')
+        .innerHTML = '9b done!';
+      }
+      function updateMove(move){
+        document.querySelector('.js-move')
+          .innerHTML = `You chose: ${move}`
+      }
+      function updateName(){
+        const buttonElement = document.querySelector('.js-name-input');
+        const name = buttonElement.value;
+        document.querySelector('.js-name-update')
+          .innerHTML = `Your name is: ${name}`;
+      }
+
+      function handleNameKeyDown(){
+        if(event.key === 'Enter'){updateName();}
+      }
+
+    </script>
+  </body>
+</html>

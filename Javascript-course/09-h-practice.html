@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Text Box</title>
+  </head>
+  <body>
+    <input class="js-text-input" onkeyup="updateWhileTyping();">
+    <p class="js-update-text"></p>
+    <script>
+      function updateWhileTyping(){
+        const inputElement = document.querySelector('.js-text-input');
+        let text = inputElement.value;
+        document.querySelector('.js-update-text')
+          .innerHTML = `${text}`;
+      }
+    </script>
+  </body>
+</html>
