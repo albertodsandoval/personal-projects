@@ -1,0 +1,32 @@
+body{
+  background-color: black;
+}
+.calculation{
+  color: white;
+  font-family: arial;
+  font-size: 40px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.grey-button{
+  background-color: rgb(51, 49, 49);
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-size: 20px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+.orange-button{
+  background-color: orange;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-size: 20px;
+  margin-right: 10px;
+  font-weight:bold ;
+}

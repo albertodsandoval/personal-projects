@@ -1,0 +1,40 @@
+.amazon-button{
+  border:none;
+  background-color: rgb(255, 216, 20);
+  border-radius: 20px;
+  font-size: 17px;
+  padding: 7px 40px;
+  color: black;
+}
+.uber-request-now-button{
+  border: none;
+  font-size: 14px;
+  padding: 12px 20px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  font-weight:bold;
+}
+.schedule-for-later-button{
+  border: none;
+  font-size: 14px;
+  padding: 12px 20px;
+  background-color: rgb(230, 230,230);
+  color: black;
+  border-radius: 5px;
+  font-weight:bold;
+  margin-left: 10px;
+}
+button{
+  border: none;
+  font-size: 14px;
+  padding: 12px 20px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  font-weight:bold;
+}
+.is-toggled{
+  background-color: rgb(230, 230,230);
+  color: black;
+}
