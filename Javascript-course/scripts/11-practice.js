@@ -157,3 +157,119 @@ function countWords(words){
   return wordCount;
 }
 console.log(countWords(['dog','monkey','dog','giraffe','giraffe','dog','monkey','gazelle']));
+
+//11o
+const stringArray = [
+  'Hello','GoodBye','See you later','search','search','banana'
+];
+let indexAppeared1= -1;
+for(i = 0; i<stringArray.length; i++){
+  if(stringArray[i]==='search'){
+    indexAppeared1=i;
+  }
+}
+console.log(indexAppeared1);
+
+//11p
+let indexAppeared2= -1;
+for(i = 0; i<stringArray.length; i++){
+  if(stringArray[i]==='search'){
+    indexAppeared2=i;
+    break;
+  }
+}
+console.log(indexAppeared2);
+
+//11q
+function findIndex(array, word){
+  for(i=0;i<array.length;i++){
+    if(array[i]===word){
+      return i;
+    }
+  }
+  return -1;
+}
+console.log(findIndex(stringArray,'banana'));
+
+//11r
+function removeEgg(foods){
+  for(i=0;i<foods.length;i++){
+    if(foods[i]==='egg'){
+      foods.splice(i,1);
+    }
+  }
+  return foods;
+}
+console.log(removeEgg(['egg','bacon','grease','sasauge']));
+
+//11s
+function removeEggUpdated(foods){
+  let eggsRemoved=0;
+  for(i=0;i<foods.length;i++){
+    if(foods[i]==='egg'&&eggsRemoved<2){
+      foods.splice(i,1);
+      eggsRemoved++;
+    }
+  }
+  return foods;
+}
+console.log(removeEggUpdated(['bacon','grease','egg','sasauge','egg','egg','egg']));
+
+//11t
+function removeEggUpdatedAgain(foods){
+  let eggsRemoved=0;
+  foods.reverse();
+  for(i=0;i<foods.length;i++){
+    if(foods[i]==='egg'&&eggsRemoved<2){
+      foods.splice(i,1);
+      eggsRemoved++;
+    }
+  }
+  foods.reverse();
+  return foods;
+}
+console.log(removeEggUpdatedAgain(['bacon','grease','egg','sasauge','egg','egg','egg']));
+
+//11u
+function removeEggUpdatedAgain(foods){
+  let eggsRemoved=0;
+  let reverseFoods = foods.slice();
+  reverseFoods.reverse();
+  for(i=0;i<foods.length;i++){
+    if(reverseFoods[i]==='egg'&&eggsRemoved<2){
+      reverseFoods.splice(i,1);
+      eggsRemoved++;
+    }
+  }
+  reverseFoods.reverse();
+  return reverseFoods;
+}
+console.log(removeEggUpdatedAgain(['bacon','grease','egg','sasauge','egg','egg','egg']));
+
+//11v
+for(i=1;i<=20;i++){
+  let textToPrint ='';
+  if(i%3===0){
+    textToPrint+='Fizz';
+  }
+  if(i%5===0){
+    textToPrint+='Buzz';
+  }
+  else if(i%3!==0&&i%5!==0){
+    textToPrint+=i;
+  }
+  console.log(textToPrint)
+}
+
+//11w
+function unique(array){
+  const newArray=[];
+  for(let i=0;i<array.length;i++){
+    const word = array[i];
+    if(findIndex(newArray,word)===-1){
+      newArray.push(word);
+    }
+  }
+  return newArray;
+}
+console.log(unique(['green','blue','zazu','blue','green','monkee']));

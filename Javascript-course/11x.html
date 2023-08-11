@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo List</title>
+    <link rel="stylesheet" href="styles/11x.css">
+  </head>
+  <body>
+    <p>Todo List Practice 1</p>
+    <div class="todo-input-grid">
+      <input 
+        class="js-todo-list-input name-input" 
+        placeholder="Todo name" 
+        onkeydown="if(event.key==='Enter'){addTodo();};">
+      <input 
+        class="js-date-input due-date-input" 
+        type="date">
+      <button 
+        class="js-add-button add-button" 
+        onclick="addTodo();"
+        >Add</button>
+    </div>
+
+    <div class="js-display-todo todo-grid"></div>
+
+    <script src="scripts/11x.js"></script>
+  </body>
+</html>
