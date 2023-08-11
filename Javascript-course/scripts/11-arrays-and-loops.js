@@ -76,7 +76,7 @@ const todoList = [
 for(i = 0; i<todoList.length;i++){
   console.log(todoList[i]);
 }
-*/
+
 
 //accumulator pattern will accumulate 
 //the results of the values in an array
@@ -87,3 +87,52 @@ for(i=0; i<numArray.length;i++){
   numArray[i]= num*2;
 }
 console.log(numArray);
+*/
+//arrays are also references!
+//so copies are copies of pointers, not values
+const array1 = [1,2,3];
+const array2 = array1.slice();
+array2.push(4);
+console.log(array1,array2);
+//slice, though copies values
+//deconstructing
+const [firstValue,secoondValue] = [1,2,3];
+console.log(firstValue,secoondValue);
+
+for(let i=1;i<=10;i++){
+  if(i===3)
+    continue;//continue will call the loop again
+    //which skips the code below it
+  if(i%3===0)
+    continue;
+  console.log(i);
+  if(i===8)
+    break;//break lets you stop a loop early
+}
+let i = 1;
+while(i<=10){
+  if(i%3===0){
+    i++;
+    continue;
+    //have to increment before continue
+    //to avoid infinite loop
+  }
+  console.log(i);
+  i++;
+}
+function doubleArray(nums){
+  const numsDoubled = [];
+
+  for(let i = 0; i<nums.length;i++){
+    const num = nums[i]*2;
+    if(num === 0){
+      return numsDoubled;//loop will stop when
+      //it sees the number zero
+    }
+    numsDoubled.push(num);
+  
+  }
+  return numsDoubled;
+}
+console.log(doubleArray([1,2,3]));
+
